@@ -1,0 +1,92 @@
+#coding: utf-8
+import math
+class calculadora:
+ 
+    def __init__(self):
+        self.n=1
+    def menu(self):
+        print"calculadora cientifica en Python"
+        print"suma...........................1"
+        print"resta..........................2"
+        print"mltiplicacion..................3"
+        print"division.......................4"
+        print"raiz cuadrada..................5"
+        print"potencializacion...............6"
+        print"seno...........................7"
+        print"coseno.........................8"
+        print"salir..........................0"
+        self.r=int(raw_input("¿Que desea hacer?\n"))
+        if self.r==0:
+            print("saliendo")
+        if self.r==1:
+            self.suma()
+        elif self.r==2:
+            self.resta()
+        elif self.r==3:
+            self.multiplicacion()
+        elif self.r==4:
+            self.division()
+        elif self.r==5:
+            self.raizcuadrada()
+        elif self.r==6:
+            self.potencializacion()
+        elif self.r==7:
+            self.seno()
+        elif self.r==8:
+            self.coseno()
+        else:
+            print"valor incorrecto\n"
+        return r
+    def suma(self):
+        print"suma"
+        self.n1=1
+        self.vsuma=0
+        while(self.n1!=0):
+            self.n1=int(raw_input("porfavor ingrese un numero entero (0 para dejar de sumar)\n"))
+            self.vsuma=self.vsuma+self.n1
+        print"la suma total es: "+ str(self.vsuma)
+    def resta(self):
+        print"resta"
+        self.n1=int(raw_input("porfavor ingrese un numero entero \n"))
+        self.n2=int(raw_input("porfavor ingrese un numero entero \n"))
+        self.vresta=self.n1-self.n2
+        print"la resta total es: "+ str(self.vresta)
+    def multiplicacion(self):
+        print"multiplicacion\n"
+        self.vres=1
+        self.n1=1
+        while(self.n1!=0):
+            self.n1=int(raw_input("porfavor ingrese un primer numero entero (0 para dejar de multiplicar)\n"))
+            if self.n1!=0:
+                    self.vres=self.vres*self.n1
+        print"el resultado es: "+ str(self.vres)
+    def division(self):
+        print"division\n"
+        self.n1=float(raw_input("porfavor ingrese un primer numero entero \n"))
+        self.n2=float(raw_input("porfavor ingrese otro numero entero\n"))
+        if self.n2==0:
+            print"no existe la diviso¿ion"
+        else:
+            self.res=self.n1/self.n2
+        print"el resultado es"+str(self.res)+"\n"
+    def raizcuadrada(self):
+        print"raiz cuadrada\n"
+        self.n1=float(raw_input("porfavor ingrese un primer numero entero \n"))
+        self.res=self.n**0.5
+        if self.n1==0:
+            self.res=1
+        else:
+            self.res=self.n1**0.5
+        print"el resultado es"+str(self.res)+"\n"
+    def seno(self):
+        self.a=int(raw_input("Digite el valor:"))
+        print "El resultado del Seno es:", math.sin(self.a)
+    def coseno(self):
+        self.a=int(raw_input("Digite el valor:"))
+        print "El resultado del Coseno es:", math.cos(self.a)
+calc= calculadora()
+r=1
+while (r!=0):
+    r=calc.menu()
+    if r!=0:
+        r=int(raw_input("desea ingresar otro valor (1=si/ 0=no)"))
